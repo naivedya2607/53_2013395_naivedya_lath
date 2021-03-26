@@ -12,11 +12,11 @@ if(isset($_POST['submit'])){
     $city = $_POST['city'];
 
     if($username==NULL || $email==NULL || $gender==NULL || $contact==NULL || $city==NULL){
-        echo "form not printing";
+        echo "form not filled correctly";
     }
     $str = (string)$contact;
     if(strlen($str)>10 || strlen($str)<10){
-        echo "please write valid contact number";
+        echo "enter valid contact number";
     }
 
     $sql = "INSERT INTO `users` (`username`, `email`, `contact`, `gender`, `city`) VALUES ('$username', '$email','$contact', '$gender', '$city')";
@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
     }
 }
 else{
-    echo "please enter details";
+    echo "please enter the details";
 }
 
 ?>
