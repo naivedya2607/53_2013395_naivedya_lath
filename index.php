@@ -15,8 +15,17 @@ if(isset($_POST['submit'])){
         echo "form not printing";
     }
     $str = (string)$contact;
-    if(strlen($str)>10 && strlen($str)<10){
+    if(strlen($str)>10 || strlen($str)<10){
         echo "please write valid contact number";
+    }
+
+    $sql = "INSERT INTO `users` (`username`, `email`, `contact`, `gender`, `city`) VALUES ('$username', '$email','$contact', '$gender', '$city')";
+
+    if(!mysqli_query($conn, $sql)){
+        echo "Error1 ". mysqli_error($conn);
+    }
+    else{
+        echo "Data sent successfully....1";
     }
 }
 else{
@@ -42,9 +51,6 @@ else{
 	        <option value="Delhi">Delhi</option>
 	        <option value="Jaipur">Jaipur</option>
 	        <option value="Nanital">Nanital</option>
-	        <option value="Pune">Pune</option>
-	        <option value="Hyderabad">Hyderabad</option>
-	        <option value="Mumbai">Mumbai</option>
 	        <option value="Mussoorie">Mussoorie</option>
 	        <option value="Lucknow">Lucknow</option>
     	</select><br>
