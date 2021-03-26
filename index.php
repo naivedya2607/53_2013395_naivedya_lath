@@ -9,26 +9,24 @@ if(isset($_POST['submit'])){
     $contact = $_POST['contact'];
     $gender = $_POST['gender'];
     $email = $_POST['email'];
+    $city = $_POST['city'];
+
+    if($username==NULL || $email==NULL || $gender==NULL || $contact==NULL || $city==NULL){
+        echo "form not printing";
+    }
+    $str = (string)$contact;
+    if(strlen($str)>10 && strlen($str)<10){
+        echo "please write valid contact number";
+    }
 }
 else{
-    echo "please enter the details";
+    echo "please enter details";
 }
 
 ?>
 
 <!DOCTYPE html>
 <head>
-    <style type="text/css">
-        table,td,th,tr{
-            width: 60%;
-            text-align: center;
-            border: 2px solid black;
-            border-collapse: collapse;
-            border-spacing: 5px;
-            padding: 10px;
-            font-family: sans-serif;
-        }
-    </style>
 </head>
 <html>
   <body>
@@ -44,6 +42,9 @@ else{
 	        <option value="Delhi">Delhi</option>
 	        <option value="Jaipur">Jaipur</option>
 	        <option value="Nanital">Nanital</option>
+	        <option value="Pune">Pune</option>
+	        <option value="Hyderabad">Hyderabad</option>
+	        <option value="Mumbai">Mumbai</option>
 	        <option value="Mussoorie">Mussoorie</option>
 	        <option value="Lucknow">Lucknow</option>
     	</select><br>
