@@ -32,7 +32,7 @@ else{
 </head>
 <html>
   <body>
-    <form action="form.php" method="POST">
+    <form action="index.php" method="POST">
         Name <input type="text" name="name" required ><br>
         E-mail <input type="email" name="email" required ><br>
         Contact <input type="number" name="contact" pattern="^\d{10}$" required ><br>
